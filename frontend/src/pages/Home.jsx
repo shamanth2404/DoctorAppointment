@@ -136,6 +136,13 @@ const Home = () => {
       </section>
 
       <About />
+
+      {/* Services Section */}
+      <section>
+        <div className="container">
+          
+        </div>
+      </section>
     </>
   );
 };

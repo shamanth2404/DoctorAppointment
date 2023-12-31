@@ -15,6 +15,7 @@ import avatarIcon from '../assets/images/avatar-icon.png'
 import DoctorList from "../components/Doctors/DoctorList";
 import faqImg from '../assets/images/faq-img.png'
 import FaqList from "../components/faq/FaqList";
+import Testimonial from "../components/testimonial/Testimonial";
 const Home = () => {
   return (
     <>
@@ -239,7 +240,15 @@ const Home = () => {
         </div>
       </section>
       {/* Testimonial */}
-      
+      <section>
+        <div className="container">
+          <div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">What our patients say</h2>
+            <p className="textPara text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aliquid dolorem ad consectetur, officiis asperiores!</p>
+          </div>
+          <Testimonial />
+        </div>
+      </section>
     </>
   );
 };

@@ -17,7 +17,7 @@ const About = () => {
                 </div>
                 {/* About Content */}
                 <div className="w-full lg:w-1/2 xl:w-[670px] order-1 lg:order-2">
-                  <h2 className="heading">Proud to be one of the nation's best</h2>
+                  <h2 className="heading text-[20px]">Proud to be one of the nation's best</h2>
                   <p className="textPara">For 30 years in a row,U.S News & World Report has recognized us as one of the best publics hospitals in the nation and #1 in Texas</p>
                   <p className="textPara mt-[30px]">Our best is something we strive for each day,caring for our patients not looking back at what we accomplished but towards what w ecan do tomorrow. Providing the best.</p>
                   <Link to='/'>

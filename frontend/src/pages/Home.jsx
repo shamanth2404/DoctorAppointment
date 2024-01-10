@@ -80,7 +80,7 @@ const Home = () => {
       <section>
         <div className="container">
           <div className="lg:w-[470px] mx-auto">
-            <h2 className="heading text-center">
+            <h2 className="heading text-center text-[30px]">
               Providing the best medical services
             </h2>
             <p className="textPara text-center">
@@ -149,7 +149,7 @@ const Home = () => {
       <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">Our Medical Services</h2>
+            <h2 className="heading text-center text-[30px]">Our Medical Services</h2>
             <p className="textPara text-center">
               World class care for everyone Our health System offers unmatched expert health care
             </p>
@@ -163,8 +163,8 @@ const Home = () => {
           <div className="flex items-center justify-between flex-col lg:flex-row">
             {/* Feature Content */}
             <div className="xl:w-[670px]">
-              <h2 className="heading">
-                Get virtual treatment <br /> anytime
+              <h2 className="heading text-[20px]">
+                Get virtual treatment anytime
               </h2>
               <ul className="pl-4">
                 <li className="textPara">
@@ -216,7 +216,7 @@ const Home = () => {
       <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">Our great doctors</h2>
+            <h2 className="heading text-center text-[30px]">Our great doctors</h2>
             <p className="textPara text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aliquid dolorem ad consectetur, officiis asperiores!</p>
           </div>
           <DoctorList />
@@ -231,8 +231,8 @@ const Home = () => {
             </div>
 
             <div className="w-full md:w-1/2">
-              <h2 className="heading">
-                Most Questions by our beloved patients
+              <h2 className="heading text-[30px]">
+                Most Questions by our patients
               </h2>
               <FaqList />
             </div>
@@ -243,7 +243,7 @@ const Home = () => {
       <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">What our patients say</h2>
+            <h2 className="heading text-center text-[30px]">What our patients say</h2>
             <p className="textPara text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aliquid dolorem ad consectetur, officiis asperiores!</p>
           </div>
           <Testimonial />

@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import avatar from "../assets/images/doctor-img01.png";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import {toast} from 'react-toastify'
+import HashLoader from 'react-spinners/HashLoader'
+// import uploadImageToCloudinary from "../utils/uploadCloudinary";
 const Signup = () => {
   const [selectedFile,setSelectedFile] = useState(null);
   const [previewUrl,setPreviewUrl] = useState(null);
+  const [loading,setLoading] = useState(false);
   const [formData, setFormData] = useState({ 
     name:'',
     email: "", 
@@ -12,16 +16,41 @@ const Signup = () => {
     gender:'',
     role:'patient'
    });
+   const navigate = useNavigate();
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleFileInputChange = async (event) =>{
     const file = event.target.files[0]
 
-    console.log(file)
+    // const data = await uploadImageToCloudinary(file)
+
+    // console.log(data)
   };
-  const submitHandler = async event =>{
+  const submitHandler = async event =>{    
     event.preventDefault();
+    setLoading(true);
+    try {
+      const res = await fetch(`${BASE_URL}/auth/register`,{
+        method:'post',
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const {message} = await res.json()
+
+      if(!res.ok){
+        throw new Error(message)
+      }
+      setLoading(false)
+      toast.success(message)
+      navigate('/login')
+    } catch (error) {
+      toast.error(error.message)
+      setLoading(false)
+    }
   }
   return (
     <section className="px-5 xl:px-0">
@@ -103,6 +132,7 @@ const Signup = () => {
                   id="customFile"
                   accept=".jpg , .png"
                   className="absolute top-0 left-0 w-full opacity-0 cursor-pointer"
+                  onChange={handleFileInputChange}
                 />
                 <label
                   htmlFor="customFile"
@@ -114,10 +144,11 @@ const Signup = () => {
             </div>
             <div className="mt-7">
               <button
+              disabled={loading && true}
                 type="submit"
                 className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3"
               >
-                Sign Up
+                {loading ? <HashLoader size={35} color="#ffffff"/> : 'Sign Up'}
               </button>
               <p className="mt-5 text-textColor text-center">
                 Already have an account?{" "}

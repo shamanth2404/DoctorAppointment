@@ -9,7 +9,7 @@ const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
 
   const [loading,setLoading] = useState(false);
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const {dispatch} = useContext(authContext);
 
@@ -17,7 +17,7 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const submitHandler = async event =>{    
+  const submitHandler = async (event) =>{    
     event.preventDefault();
     setLoading(true);
     try {

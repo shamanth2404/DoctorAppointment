@@ -14,7 +14,7 @@ import ProtectedRoute from "./ProtectedRoute";
 const Routers = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />} /> 
       <Route path="/services" element={<Services />} />
       <Route path="/doctors" element={<Doctors />} />
       <Route path="/doctors/:id" element={<DoctorDetails />} />
